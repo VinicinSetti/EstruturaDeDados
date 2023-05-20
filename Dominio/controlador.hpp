@@ -130,4 +130,18 @@ void Controlador::mostarUsuario(int mat) {
     }
 }
 
+void Controlador::adicionarRevista(Revista revista) {
+    revistas->inserir(revista.mat, revista);
+}
+void Controlador::removerRevista(int mat) {
+    revistas->remover(mat);
+}
+void Controlador::mostrarRevista(int mat) {
+    cout<<"Matricula da Revista: "<<revistas->get(mat)->mat<<endl;
+    cout<<"Titulo da Revista: "<<revistas->get(mat)->titulo<<endl;
+    cout<<"Genero da Revista: "<<revistas->get(mat)->genero<<endl;
+    cout<<"Editora da Revista: "<<revistas->get(mat)->editora<<endl;
+    cout<<"Autor da Revista: "<<revistas->get(mat)->autor<<endl;
+}
+
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
