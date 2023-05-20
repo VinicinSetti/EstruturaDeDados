@@ -15,7 +15,6 @@ struct Editora{
 
     Editora();
     Editora(string nome);
-
 };
 
 Editora::Editora() {
@@ -27,5 +26,7 @@ Editora::Editora(string nome) {
     this->mat = Editora::proxMat++;
     this->nome = nome;
 }
+
+
 
 #endif //TRABESTRUTURAM2_EDITORA_H

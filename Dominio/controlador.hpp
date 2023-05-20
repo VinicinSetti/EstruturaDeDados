@@ -41,6 +41,8 @@ struct Controlador{
     void adicionarUsuario(Usuario usuario);
     void removerUsuario(int mat);
     void mostarUsuario(int mat);
+    void alugarLivro(int matUsuario, int matLivro);
+    void devolverLivro(int matUsuario, int matLivro);
 };
 
 Controlador::Controlador() {
@@ -119,7 +121,7 @@ void Controlador::mostarUsuario(int mat) {
     cout<<"Matricula do Usuario: "<<usuarios->get(mat)->mat<<endl;
     cout<<"Nome do Usuario: "<<usuarios->get(mat)->nome<<endl;
     cout<<"Livros do Usuario:"<<endl;
-    LinkedList<int> livros = usuarios->get(mat)->livros;
+    LinkedList<int> livros = usuarios->get(mat)->LivrosAlugados;
 }
 
 #endif //TRABESTRUTURAM2_CONTROLADOR_H

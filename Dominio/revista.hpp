@@ -19,15 +19,15 @@ struct Revista{
 };
 
 Revista::Revista() {
-    mat = proxMat++;
-    titulo = "";
-    autor = 0;
-    editora = 0;
-    genero = "";
+    this->mat = proxMat++;
+    this->titulo = "";
+    this->autor = 0;
+    this->editora = 0;
+    this->genero = "";
 }
 
 Revista::Revista(std::string titulo, int autor, int editora, std::string genero) {
-    mat = proxMat++;
+    this->mat = proxMat++;
     this->titulo = titulo;
     this->autor = autor;
     this->editora = editora;

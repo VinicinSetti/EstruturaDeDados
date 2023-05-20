@@ -11,9 +11,9 @@ struct NoHash{
     C chave;
     V valor;
 
-    NoHash<V, C> *prox;
-    NoHash<V, C> *ant;
-    NoHash(V valor, C chave){
+    NoHash<C, V> *prox;
+    NoHash<C, V> *ant;
+    NoHash(C chave, V valor){
         this->valor = valor;
         this->chave = chave;
         this->prox = nullptr;
@@ -24,10 +24,10 @@ struct NoHash{
 template<typename V, typename C>
 struct Hash{
     const int TAM = 10;
-    NoHash<V, C> **tabela;
+    NoHash<C, V> **tabela;
 
     Hash(){
-        tabela = new NoHash<V, C>*[TAM];
+        tabela = new NoHash<C, V>*[TAM];
         for(int i=0; i<TAM; i++){
             tabela[i] = nullptr;
         }
@@ -37,17 +37,17 @@ struct Hash{
         return chave % TAM;
     }
 
-    void inserir(V valor, C chave){
+    void inserir(C chave, V valor){
         int valorHash = hash(chave);
-        NoHash<V, C> *ant = nullptr;
-        NoHash<V, C> *entrada = tabela[valorHash];
+        NoHash<C, V> *ant = nullptr;
+        NoHash<C, V> *entrada = tabela[valorHash];
         while(entrada != nullptr){
             ant = entrada;
             entrada = entrada->prox;
         }
 
         if(entrada == nullptr){
-            entrada = new NoHash<V, C>(valor, chave);
+            entrada = new NoHash<C, V>(chave, valor);
 
             if(ant == nullptr){ tabela[valorHash] = entrada; }
             else{ ant->prox = entrada; }
@@ -57,7 +57,7 @@ struct Hash{
 
     V* get(C chave){
         int valorHash = hash(chave);
-        NoHash<V, C>* entrada = tabela[valorHash];
+        NoHash<C, V>* entrada = tabela[valorHash];
         while(entrada != nullptr){
             if(entrada->chave == chave) return &(entrada->valor);
             entrada = entrada->prox;
@@ -68,8 +68,8 @@ struct Hash{
 
     void remover(C chave){
         int valorHash = hash(chave);
-        NoHash<V, C> *ant = nullptr;
-        NoHash<V, C> *entrada = tabela[valorHash];
+        NoHash<C, V> *ant = nullptr;
+        NoHash<C, V> *entrada = tabela[valorHash];
 
         while(entrada != nullptr && entrada->chave != chave){
             ant = entrada;

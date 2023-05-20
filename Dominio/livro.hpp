@@ -15,8 +15,8 @@ struct Livro{
     int editora;
     string titulo;
     string genero;
-    bool emprestado;
-    string dataDoEmprestimo;
+    bool alugado;
+    string dataDoAluguel;
 
     Livro();
     Livro(string titulo, int autor, int editora, string genero);
@@ -27,31 +27,31 @@ struct Livro{
 };
 
 Livro::Livro() {
-    mat = proxMat++;
-    titulo = "";
-    autor = 0;
-    editora = 0;
-    genero = "";
-    emprestado = false;
-    dataDoEmprestimo = "";
+    this->mat = proxMat++;
+    this->titulo = "";
+    this->autor = 0;
+    this->editora = 0;
+    this->genero = "";
+    this->alugado = false;
+    this->dataDoAluguel = "";
 }
 
-Livro::Livro(string titulo, int autor, int editora, string genero, bool esprestado, string dataDoEmprestimo) {
-    mat = proxMat++;
+Livro::Livro(string titulo, int autor, int editora, string genero, bool alugado, string dataDoAluguel) {
+    this->mat = proxMat++;
     this->titulo = titulo;
     this->autor = autor;
     this->editora = editora;
     this->genero = genero;
-    this->emprestado = emprestado;
-    this->dataDoEmprestimo = dataDoEmprestimo;
+    this->alugado = alugado;
+    this->dataDoAluguel = dataDoAluguel;
 }
 
-void Livro::definirEmprestimo(bool emprestar) {
-    this->emprestado = emprestar;
+void Livro::definirEmprestimo(bool alugado) {
+    this->alugado = alugado;
 }
 
-void Livro::dataRealizadaDoEmprestimo(string dataDoEmprestimo) {
-
+void Livro::dataRealizadaDoEmprestimo(string dataDoAluguel) {
+    this->dataDoAluguel = dataDoAluguel;
 }
 
 #endif //TRABESTRUTURAM2_LIVRO_H
