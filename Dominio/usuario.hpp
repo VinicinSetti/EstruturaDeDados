@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "../Utilidades/LinkedList/LinkedList.hpp"
+#include "Funcoes/lista.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ struct Usuario{
     static int proxMat;
     int mat;
     string nome;
-    LinkedList<int> LivrosAlugados;
+    Lista<int> LivrosAlugados;
 
     Usuario();
     Usuario(string nome);
@@ -22,21 +22,21 @@ struct Usuario{
 Usuario::Usuario() {
     this->mat = proxMat++;
     this->nome = "";
-    this->LivrosAlugados = LinkedList<int>();
+    this->LivrosAlugados = Lista<int>();
 }
 
 Usuario::Usuario(string nome) {
     this->mat = proxMat++;
     this->nome = nome;
-    this->LivrosAlugados = LinkedList<int>();
+    this->LivrosAlugados = Lista<int>();
 }
 
 void Usuario::alugarLivro(int matLivro) {
-    LivrosAlugados.insert(matLivro);
+    LivrosAlugados.inserir(matLivro);
 }
 
 void Usuario::devolverLivro(int matLivro) {
-    LivrosAlugados.remove(matLivro);
+    LivrosAlugados.remover(matLivro);
 }
 
 #endif //TRABESTRUTURAM2_USUARIO_H

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "../Utilidades/LinkedList/LinkedList.hpp"
+#include "Funcoes/lista.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ struct Editora{
     static int proxMat;
     int mat;
     string nome;
-    LinkedList<int> *livro;
+    Lista<int> *livro;
 
     Editora();
     Editora(string nome);

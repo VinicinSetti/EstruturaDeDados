@@ -74,7 +74,7 @@ void Controlador::mostrarAutor(int mat) {
     cout<<"Autor matricula: "<<autores->get(mat)->mat<<endl;
     cout<<"Nome do Autor: "<<autores->get(mat)->nome<<endl;
     cout<<"Livros deste autor:"<<endl;
-    LinkedList<int> *livros = autores->get(mat)->livros;
+    Lista<int> *livros = autores->get(mat)->livros;
     for (int i = 0; i < livros->getSize(); ++i) {
         cout<<this->livros->get(livros->get(i))->titulo<<endl;
     }
@@ -92,7 +92,7 @@ void Controlador::mostrarEditora(int mat) {
     cout<<"Nº da Matricula da Editora: "<<editoras->get(mat)->mat<<endl;
     cout<<"Nome da Editora: "<<editoras->get(mat)->nome<<endl;
     cout<<"Livros desta editora:"<< endl;
-    LinkedList<int> *livros = editoras->get(mat)->livro;
+    Lista<int> *livros = editoras->get(mat)->livro;
     for (int i = 0; i < livros->getSize(); ++i) {
         cout<<this->livros->get(livros->get(i))->titulo<<endl;
     }
@@ -118,13 +118,13 @@ void Controlador::adicionarUsuario(Usuario usuario) {
     usuarios->inserir(usuario.mat, usuario);
 }
 void Controlador::removerUsuario(int mat) {
-    usuarios->remove(mat);
+    usuarios->remover(mat);
 }
 void Controlador::mostarUsuario(int mat) {
     cout<<"Matricula do Usuario: "<<usuarios->get(mat)->mat<<endl;
     cout<<"Nome do Usuario: "<<usuarios->get(mat)->nome<<endl;
     cout<<"Livros do Usuario:"<<endl;
-    LinkedList<int> livros = usuarios->get(mat)->LivrosAlugados;
+    Lista<int> livros = usuarios->get(mat)->LivrosAlugados;
 }
 
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
