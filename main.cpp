@@ -7,11 +7,7 @@
  *          -Vinicius Setti
  */
 
-#include <iostream>
-
-using namespace std;
-
-#include "Menu/Menu.h"
+#include "Menu/Menu.cpp"
 
 int main() {
     Menu menu;

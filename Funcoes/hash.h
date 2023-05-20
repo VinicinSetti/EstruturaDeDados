@@ -24,7 +24,7 @@ struct NoHash{
 template<typename C, typename V>
 struct Hash{
     const int tamHash = 10;
-    int tamHash2;
+    int tamHash2 = 0;
     NoHash<C, V> **tabela;
 
     Hash(){
