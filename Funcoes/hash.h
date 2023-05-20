@@ -6,7 +6,7 @@
 
 using namespace std;
 
-template<typename V, typename C>
+template<typename C, typename V>
 struct NoHash{
     C chave;
     V valor;
@@ -21,7 +21,7 @@ struct NoHash{
     }
 };
 
-template<typename V, typename C>
+template<typename C, typename V>
 struct Hash{
     const int TAM = 10;
     NoHash<C, V> **tabela;
@@ -79,7 +79,7 @@ struct Hash{
         else{
             if(ant == nullptr) tabela[valorHash] = entrada->prox;
             else{
-                ant->prox = entrada->entrada;
+                ant->prox = entrada->prox;
             }
             delete entrada;
         }
