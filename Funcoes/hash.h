@@ -23,18 +23,18 @@ struct NoHash{
 
 template<typename C, typename V>
 struct Hash{
-    const int TAM = 10;
+    const int tamHash = 10;
     NoHash<C, V> **tabela;
 
     Hash(){
-        tabela = new NoHash<C, V>*[TAM];
-        for(int i=0; i<TAM; i++){
+        tabela = new NoHash<C, V>*[tamHash];
+        for(int i=0; i<tamHash; i++){
             tabela[i] = nullptr;
         }
     }
 
     int hash(C chave){
-        return chave % TAM;
+        return chave % tamHash;
     }
 
     void inserir(C chave, V valor){
