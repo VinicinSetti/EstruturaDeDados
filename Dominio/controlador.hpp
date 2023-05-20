@@ -126,8 +126,16 @@ void Controlador::mostarUsuario(int mat) {
     cout<<"Livros do Usuario:"<<endl;
     Lista<int> livros = usuarios->get(mat)->LivrosAlugados;
     for (int i = 0; i < livros.tamLista; ++i) {
-
+        cout<<this->livros->get(livros.get(mat))->titulo<<endl;
     }
+}
+
+void Controlador::alugarLivro(int matUsuario, int matLivro) {
+    usuarios->get(matLivro)->alugarLivro(matLivro);
+}
+
+void Controlador::devolverLivro(int matUsuario, int matLivro) {
+    usuarios->get(matUsuario)->devolverLivro(matLivro);
 }
 
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
