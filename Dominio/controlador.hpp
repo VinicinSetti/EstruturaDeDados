@@ -75,7 +75,7 @@ void Controlador::mostrarAutor(int mat) {
     cout<<"Nome do Autor: "<<autores->get(mat)->nome<<endl;
     cout<<"Livros deste autor:"<<endl;
     Lista<int> *livros = autores->get(mat)->livros;
-    for (int i = 0; i < livros->getSize(); ++i) {
+    for (int i = 0; i < livros->tamLista; ++i) {
         cout<<this->livros->get(livros->get(i))->titulo<<endl;
     }
 }
@@ -93,7 +93,7 @@ void Controlador::mostrarEditora(int mat) {
     cout<<"Nome da Editora: "<<editoras->get(mat)->nome<<endl;
     cout<<"Livros desta editora:"<< endl;
     Lista<int> *livros = editoras->get(mat)->livro;
-    for (int i = 0; i < livros->getSize(); ++i) {
+    for (int i = 0; i < livros->tamLista; ++i) {
         cout<<this->livros->get(livros->get(i))->titulo<<endl;
     }
 }
@@ -125,6 +125,9 @@ void Controlador::mostarUsuario(int mat) {
     cout<<"Nome do Usuario: "<<usuarios->get(mat)->nome<<endl;
     cout<<"Livros do Usuario:"<<endl;
     Lista<int> livros = usuarios->get(mat)->LivrosAlugados;
+    for (int i = 0; i < livros.tamLista; ++i) {
+
+    }
 }
 
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
