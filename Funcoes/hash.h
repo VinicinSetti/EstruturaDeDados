@@ -24,6 +24,7 @@ struct NoHash{
 template<typename C, typename V>
 struct Hash{
     const int tamHash = 10;
+    int tamHash2;
     NoHash<C, V> **tabela;
 
     Hash(){
@@ -53,6 +54,7 @@ struct Hash{
             else{ ant->prox = entrada; }
 
         }else{ entrada->valor = valor; }
+        tamHash2++;
     }
 
     V* get(C chave){
