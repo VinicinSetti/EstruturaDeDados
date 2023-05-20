@@ -126,16 +126,22 @@ void Controlador::mostarUsuario(int mat) {
     cout<<"Livros do Usuario:"<<endl;
     Lista<int> livros = usuarios->get(mat)->LivrosAlugados;
     for (int i = 0; i < livros.tamLista; ++i) {
-        cout<<this->livros->get(livros.get(mat))->titulo<<endl;
+
     }
 }
 
-void Controlador::alugarLivro(int matUsuario, int matLivro) {
-    usuarios->get(matLivro)->alugarLivro(matLivro);
+void Controlador::adicionarRevista(Revista revista) {
+    revistas->inserir(revista.mat, revista);
 }
-
-void Controlador::devolverLivro(int matUsuario, int matLivro) {
-    usuarios->get(matUsuario)->devolverLivro(matLivro);
+void Controlador::removerRevista(int mat) {
+    revistas->remover(mat);
+}
+void Controlador::mostrarRevista(int mat) {
+    cout<<"Matricula da Revista: "<<revistas->get(mat)->mat<<endl;
+    cout<<"Titulo da Revista: "<<revistas->get(mat)->titulo<<endl;
+    cout<<"Genero da Revista: "<<revistas->get(mat)->genero<<endl;
+    cout<<"Editora da Revista: "<<revistas->get(mat)->editora<<endl;
+    cout<<"Autor da Revista: "<<revistas->get(mat)->autor<<endl;
 }
 
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
