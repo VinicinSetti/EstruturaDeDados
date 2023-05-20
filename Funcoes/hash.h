@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 template<typename V, typename C>
 struct NoHash{
     C chave;
@@ -37,6 +39,50 @@ struct Hash{
 
     void inserir(V valor, C chave){
         int valorHash = hash(chave);
+        NoHash<V, C> *ant = nullptr;
+        NoHash<V, C> *entrada = tabela[valorHash];
+        while(entrada != nullptr){
+            ant = entrada;
+            entrada = entrada->prox;
+        }
+
+        if(entrada == nullptr){
+            entrada = new NoHash<V, C>(valor, chave);
+
+            if(ant == nullptr){ tabela[valorHash] = entrada; }
+            else{ ant->prox = entrada; }
+
+        }else{ entrada->valor = valor; }
+    }
+
+    V* get(C chave){
+        int valorHash = hash(chave);
+        NoHash<V, C>* entrada = tabela[valorHash];
+        while(entrada != nullptr){
+            if(entrada->chave == chave) return &(entrada->valor);
+            entrada = entrada->prox;
+        }
+        cout<<"Nenhum valor encontrado para a chave: "<< chave << endl;
+        return nullptr;
+    }
+
+    void remover(C chave){
+        int valorHash = hash(chave);
+        NoHash<V, C> *ant = nullptr;
+        NoHash<V, C> *entrada = tabela[valorHash];
+
+        while(entrada != nullptr && entrada->chave != chave){
+            ant = entrada;
+            entrada = entrada->prox;
+        }
+        if(entrada == nullptr) return;
+        else{
+            if(ant == nullptr) tabela[valorHash] = entrada->prox;
+            else{
+                ant->prox = entrada->entrada;
+            }
+            delete entrada;
+        }
     }
 };
 
