@@ -18,12 +18,12 @@ template<typename T>
 struct Lista{
     NoLista<T>* comeco;
     NoLista<T>* fim;
-    int tam;
+    int tamLista;
 
     Lista(){
         this->comeco = nullptr;
         this->fim = nullptr;
-        this->tam = 0;
+        this->tamLista = 0;
     }
 
     void inserir(T info){
@@ -36,7 +36,7 @@ struct Lista{
             entrada->ant = fim;
             fim = entrada;
         }
-        tam++;
+        tamLista++;
     }
 
     void remover(T info){
@@ -54,7 +54,7 @@ struct Lista{
                     entrada->prox->ant = entrada->ant;
                 }
                 delete entrada;
-                tam--;
+                tamLista--;
                 break;
             }
             entrada = entrada->prox;
