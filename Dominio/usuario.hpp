@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Funcoes/lista.h"
+#include "../Funcoes/lista.h"
 
 using namespace std;
 
@@ -18,6 +18,8 @@ struct Usuario{
     void alugarLivro(int matLivro);
     void devolverLivro(int matLivro);
 };
+
+int Usuario::proxMat = 0;
 
 Usuario::Usuario() {
     this->mat = proxMat++;

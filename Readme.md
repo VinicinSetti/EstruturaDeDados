@@ -1,1 +1,1 @@
-mingw32-g++ -Wall -Wextra -pedantic -std=c++17 -lm main.cpp Dominio/autor.hpp Dominio/controlador.hpp Dominio/editora.hpp Dominio/livro.hpp Dominio/revista.hpp Dominio/usuario.hpp Utilidades/HashTable/HashTable.hpp Utilidades/LinkedList/LinkedList.hpp Funcoes/data.h Funcoes/hash.h Funcoes/lista.h -o exec 
+mingw32-g++ -Wall -Wextra -pedantic -std=c++17 -lm main.cpp Dominio/autor.hpp Dominio/controlador.hpp Dominio/editora.hpp Dominio/livro.hpp Dominio/revista.hpp Dominio/usuario.hpp Funcoes/data.h Funcoes/hash.h Funcoes/lista.h -o exec 

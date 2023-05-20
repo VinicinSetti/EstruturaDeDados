@@ -18,6 +18,8 @@ struct Revista{
     Revista(string titulo, int autor, int editora, string genero);
 };
 
+int Revista::proxMat = 0;
+
 Revista::Revista() {
     this->mat = proxMat++;
     this->titulo = "";

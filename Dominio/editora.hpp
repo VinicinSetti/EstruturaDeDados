@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Funcoes/lista.h"
+#include "../Funcoes/lista.h"
 
 using namespace std;
 
@@ -17,13 +17,15 @@ struct Editora{
     Editora(string nome);
 };
 
+int Editora::proxMat = 0;
+
 Editora::Editora() {
-    this->mat = Editora::proxMat++;
+    this->mat = proxMat++;
     this->nome = "";
 }
 
 Editora::Editora(string nome) {
-    this->mat = Editora::proxMat++;
+    this->mat = proxMat++;
     this->nome = nome;
 }
 

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Funcoes/lista.h"
+#include "../Funcoes/lista.h"
 
 using namespace std;
 

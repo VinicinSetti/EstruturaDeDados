@@ -26,6 +26,8 @@ struct Livro{
 
 };
 
+int Livro::proxMat = 0;
+
 Livro::Livro() {
     this->mat = proxMat++;
     this->titulo = "";

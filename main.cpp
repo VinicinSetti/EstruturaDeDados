@@ -2,9 +2,10 @@
 
 using namespace std;
 
-
+#include "Menu/Menu.h"
 
 int main() {
-    cout <<"teste"<<endl;
+    Menu menu;
+    menu.run();
     return 0;
 }
