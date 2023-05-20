@@ -11,11 +11,12 @@ struct Usuario{
     static int proxMat;
     int mat;
     string nome;
-    LinkedList<int> *books;
+    LinkedList<int> *livros;
 
     Usuario();
     Usuario(string nome);
-
 };
+
+
 
 #endif //TRABESTRUTURAM2_USUARIO_H

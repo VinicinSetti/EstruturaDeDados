@@ -102,11 +102,24 @@ void Controlador::removerLivro(int mat) {
 }
 
 void Controlador::mostrarLivro(int mat) {
-    cout<<"";
+    cout<<"Matricula do Livro: "<<livros->get(mat)->mat<<endl;
+    cout<<"Titulo do Livro: "<<livros->get(mat)->titulo<<endl;
+    cout<<"Genero do Livro: "<<livros->get(mat)->genero<<endl;
+    cout<<"Editora do Livro: "<<editoras->get(livros->get(mat)->editora)->nome<<endl;
+    cout<<"Autor do livro: "<<autores->get(livros->get(mat)->autor)->nome<<endl;
 }
 
 void Controlador::adicionarUsuario(Usuario usuario) {
     usuarios->insert(usuario.mat, usuario);
+}
+void Controlador::removerUsuario(int mat) {
+    usuarios->remove(mat);
+}
+void Controlador::mostarUsuario(int mat) {
+    cout<<"Matricula do Usuario: "<<usuarios->get(mat)->mat<<endl;
+    cout<<"Nome do Usuario: "<<usuarios->get(mat)->nome<<endl;
+    cout<<"Livros do Usuario:"<<endl;
+    LinkedList<int> livros = usuarios->get(mat)->livros;
 }
 
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
