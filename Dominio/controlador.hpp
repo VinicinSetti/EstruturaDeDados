@@ -8,16 +8,19 @@
 #include "livro.hpp"
 #include "revista.hpp"
 #include "usuario.hpp"
-#include "../Utilidades/HashTable/HashTable.hpp"
+#include "usuario.hpp"
+#include "../Funcoes/data.h"
+#include "../Funcoes/hash.h"
+#include "../Funcoes/lista.h"
 
 using namespace std;
 
 struct Controlador{
-    HashTable<int, Usuario> *usuarios;
-    HashTable<int, Autor> *autores;
-    HashTable<int, Editora> *editoras;
-    HashTable<int, Livro> *livros;
-    HashTable<int, Revista> *revistas;
+    Hash<int, Usuario> *usuarios;
+    Hash<int, Autor> *autores;
+    Hash<int, Editora> *editoras;
+    Hash<int, Livro> *livros;
+    Hash<int, Revista> *revistas;
 
     Controlador();
     ~Controlador();
@@ -44,10 +47,10 @@ struct Controlador{
 };
 
 Controlador::Controlador() {
-    autores = new HashTable<int, Autor>();
-    editoras = new HashTable<int, Editora>();
-    livros = new HashTable<int, Livro>();
-    revistas = new HashTable<int, Revista>();
+    autores = new Hash<int, Autor>();
+    editoras = new Hash<int, Editora>();
+    livros = new Hash<int, Livro>();
+    revistas = new Hash<int, Revista>();
 }
 
 Controlador::~Controlador(){
@@ -58,11 +61,11 @@ Controlador::~Controlador(){
 }
 
 void Controlador::adicionarAutor(Autor autor) {
-    autores->insert(autor.mat, autor);
+    autores->inserir(autor.mat, autor);
 }
 
 void Controlador::removerAutor(int mat) {
-    autores->remove(mat);
+    autores->remover(mat);
 }
 
 void Controlador::mostrarAutor(int mat) {
@@ -76,11 +79,11 @@ void Controlador::mostrarAutor(int mat) {
 }
 
 void Controlador::adicionarEditora(Editora editora) {
-    editoras->insert(editora.mat, editora);
+    editoras->inserir(editora.mat, editora);
 }
 
 void Controlador::removerEditora(int mat) {
-    editoras->remove(mat);
+    editoras->remover(mat);
 }
 
 void Controlador::mostrarEditora(int mat) {
@@ -94,11 +97,11 @@ void Controlador::mostrarEditora(int mat) {
 }
 
 void Controlador::adicionarLivro(Livro livro) {
-    livros->insert(livro.mat, livro);
+    livros->inserir(livro.mat, livro);
 }
 
 void Controlador::removerLivro(int mat) {
-    livros->remove(mat);
+    livros->remover(mat);
 }
 
 void Controlador::mostrarLivro(int mat) {
@@ -106,7 +109,7 @@ void Controlador::mostrarLivro(int mat) {
 }
 
 void Controlador::adicionarUsuario(Usuario usuario) {
-    usuarios->insert(usuario.mat, usuario);
+    usuarios->inserir(usuario.mat, usuario);
 }
 
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
