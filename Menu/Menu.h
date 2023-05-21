@@ -15,7 +15,6 @@ void cls(){ //funcao para limpar a tela
 void menuAutor(Autor autor1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
-
     string nome;
 
 
@@ -52,17 +51,16 @@ void menuAutor(Autor autor1, Controlador &controlador, int &cont){
             cout << "Digite a matricula do autor a ser removido: ";
             cin >> matricula;
             controlador.removerAutor(matricula);
+            cont--;
             break;
     }
 }
 
 //Funcao para menu de Editora
-void menuEditora(){
+void menuEditora(Editora editora1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
-    Editora editora;
     string nome;
-    Controlador controlador = Controlador();
 
     cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Editora"<<endl;
@@ -84,8 +82,9 @@ void menuEditora(){
         case 1:
             cout << "Digite o nome da editora a ser adicionada: ";
             cin >> nome;
-            editora.nome = nome;
-            controlador.adicionarEditora(editora);
+            editora1.nome = nome;
+            controlador.adicionarEditora(editora1);
+            cont++;
             break;
         case 2:
             cout << "Digite a matricula da editora a ser exibida: ";
@@ -96,21 +95,20 @@ void menuEditora(){
             cout << "Digite a matricula da editora a ser removida: ";
             cin >> matricula;
             controlador.removerEditora(matricula);
+            cont--;
             break;
     }
 }
 
 //Funcao para menu de Livro
-void menuLivro(){
+void menuLivro(Livro livro1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
     int matriculaUsuario;
-    Livro livro1;
     string titulo;
     string genero;
     string dataAluguel;
     string dataHoje;
-    Controlador controlador = Controlador();
 
     cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Livro"<<endl;
@@ -144,6 +142,7 @@ void menuLivro(){
             cin >> titulo;
             livro1.titulo = titulo;
             controlador.adicionarLivro(livro1);
+            cont++;
             break;
         case 2:
             cout << "Digite a matricula do livro a ser exibida: ";
@@ -154,6 +153,7 @@ void menuLivro(){
             cout << "Digite a matricula do livro a ser removido: ";
             cin >> matricula;
             controlador.removerLivro(matricula);
+            cont--;
             break;
         case 4:
             cout << "Digite a matricula de um livro para ver seu historico: ";
@@ -193,16 +193,14 @@ void menuLivro(){
 }
 
 //Funcao para menu de Revista
-void menuRevista(){
+void menuRevista(Revista revista1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
     int matriculaUsuario;
-    Revista revista1;
     string titulo;
     string genero;
     string dataAluguel;
     string dataHoje;
-    Controlador controlador = Controlador();
 
     cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Revista"<<endl;
@@ -236,6 +234,7 @@ void menuRevista(){
             cin >> titulo;
             revista1.titulo = titulo;
             controlador.adicionarRevista(revista1);
+            cont++;
             break;
         case 2:
             cout << "Digite a matricula da revista a ser exibida: ";
@@ -246,6 +245,7 @@ void menuRevista(){
             cout << "Digite a matricula da revista a ser removido: ";
             cin >> matricula;
             controlador.removerRevista(matricula);
+            cont--;
             break;
         case 4:
             cout << "Digite a matricula de uma revista para ver seu historico: ";
@@ -285,13 +285,11 @@ void menuRevista(){
 }
 
 //Funcao para menu de Usuario
-void menuUsuario(){
+void menuUsuario(Usuario usuario1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
     int matriculaUsuario;
-    Usuario usuario1;
     string nome;
-    Controlador controlador = Controlador();
 
     cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Usuario"<<endl;
@@ -319,6 +317,7 @@ void menuUsuario(){
             cin >> nome;
             usuario1.nome = nome;
             controlador.adicionarUsuario(usuario1);
+            cont++;
             break;
         case 2:
             cout << "Digite a matricula do usuario a ser exibido: ";
@@ -329,6 +328,7 @@ void menuUsuario(){
             cout << "Digite a matricula do usuario a ser removido: ";
             cin >> matricula;
             controlador.removerUsuario(matricula);
+            cont--;
             break;
         case 4:
             cout << "Digite a matricula do usuario a ser consultado: ";

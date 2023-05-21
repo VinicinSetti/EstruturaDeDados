@@ -9,8 +9,16 @@ void Menu::rodar() { //funcao para inicializacao do menu
     bool menu = true;
     int opcao;
     int contAutor = 0;
+    int contEditora = 0;
+    int contLivro = 0;
+    int contRevista = 0;
+    int contUsuario = 0;
     Controlador controlador = Controlador();
     Autor *autor = new Autor[10];
+    Editora *editora = new Editora[10];
+    Livro *livro = new Livro[10];
+    Revista *revista = new Revista[10];
+    Usuario *usuario = new Usuario[10];
 
     while(menu) {
         cout << "Digite a opção desejada!\n";
@@ -40,16 +48,16 @@ void Menu::rodar() { //funcao para inicializacao do menu
                 menuAutor(autor[contAutor], controlador, contAutor);
                 break;
             case 2:
-                menuEditora();
+                menuEditora(editora[contEditora], controlador, contEditora);
                 break;
             case 3:
-                menuLivro();
+                menuLivro(livro[contLivro], controlador, contLivro);
                 break;
             case 4:
-                menuRevista();
+                menuRevista(revista[contRevista], controlador, contRevista);
                 break;
             case 5:
-                menuUsuario();
+                menuUsuario(usuario[contUsuario], controlador, contUsuario);
                 break;
             case 6:
                 menu = false; //encerra o menu
