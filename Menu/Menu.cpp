@@ -1,11 +1,11 @@
 #include <iostream>
 #include "../Menu/Menu.h"
 
-struct Menu{
-    void run();
+struct Menu{ //struct para rodar o menu
+    void rodar();
 };
 
-void Menu::run() {
+void Menu::rodar() { //funcao para inicializacao do menu
     bool menu = true;
     int opcao;
 
@@ -20,7 +20,7 @@ void Menu::run() {
         cin >> opcao;
         cls();
 
-        while(opcao < 1 || opcao > 6){
+        while(opcao < 1 || opcao > 6){ //verifica se a opcao inserida e valida
             cout << "Digito invalido, insira novamente!\n";
             cout << "\t[1] - Autor"<<endl;
             cout << "\t[2] - Editora"<<endl;
@@ -32,7 +32,7 @@ void Menu::run() {
             cls();
         }
 
-        switch(opcao){
+        switch(opcao){ //roda a funcao de menu da opcao selecionada
             case 1:
                 menuAutor();
                 break;
@@ -49,7 +49,7 @@ void Menu::run() {
                 menuUsuario();
                 break;
             case 6:
-                menu = false;
+                menu = false; //encerra o menu
                 break;
         }
     }

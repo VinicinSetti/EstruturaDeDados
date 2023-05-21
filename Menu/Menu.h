@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void cls(){
+void cls(){ //funcao para limpar a tela
     system("pause");
     system("cls");
 }
@@ -19,14 +19,14 @@ void menuAutor(){
     string nome;
     Controlador controlador = Controlador();
 
-    cout << "Digite a opção desejada!\n";
+    cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Autor"<<endl;
     cout << "\t[2] - Exibir Autor"<<endl;
     cout << "\t[3] - Remover Autor"<<endl;
     cin >> opcaoMenu;
     cls();
 
-    while(opcaoMenu < 1 || opcaoMenu > 3) {
+    while(opcaoMenu < 1 || opcaoMenu > 3) { //verifica se o valor inserido e valido
         cout << "Digito invalido, insira novamente!\n";
         cout << "\t[1] - Adicionar Autor"<<endl;
         cout << "\t[2] - Exibir Autor"<<endl;
@@ -35,7 +35,7 @@ void menuAutor(){
         cls();
     }
 
-    switch(opcaoMenu){
+    switch(opcaoMenu){ //executa a opcao desejada
         case 1:
             cout << "Digite o nome do autor a ser adicionado: ";
             cin >> nome;
@@ -63,14 +63,14 @@ void menuEditora(){
     string nome;
     Controlador controlador = Controlador();
 
-    cout << "Digite a opção desejada!\n";
+    cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Editora"<<endl;
     cout << "\t[2] - Exibir Editora"<<endl;
     cout << "\t[3] - Remover Editora"<<endl;
     cin >> opcaoMenu;
     cls();
 
-    while(opcaoMenu < 1 || opcaoMenu > 3) {
+    while(opcaoMenu < 1 || opcaoMenu > 3) { //verifica se o valor inserido e valido
         cout << "Digito invalido, insira novamente!\n";
         cout << "\t[1] - Adicionar Editora"<<endl;
         cout << "\t[2] - Exibir Editora"<<endl;
@@ -79,7 +79,7 @@ void menuEditora(){
         cls();
     }
 
-    switch(opcaoMenu){
+    switch(opcaoMenu){ //executa a opcao desejada
         case 1:
             cout << "Digite o nome da editora a ser adicionada: ";
             cin >> nome;
@@ -111,7 +111,7 @@ void menuLivro(){
     string dataHoje;
     Controlador controlador = Controlador();
 
-    cout << "Digite a opção desejada!\n";
+    cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Livro"<<endl;
     cout << "\t[2] - Exibir Livro"<<endl;
     cout << "\t[3] - Remover Livro"<<endl;
@@ -123,7 +123,7 @@ void menuLivro(){
     cin >> opcaoMenu;
     cls();
 
-    while(opcaoMenu < 1 || opcaoMenu > 8) {
+    while(opcaoMenu < 1 || opcaoMenu > 8) { //verifica se o valor inserido e valido
         cout << "Digito invalido, insira novamente!\n";
         cout << "\t[1] - Adicionar Livro"<<endl;
         cout << "\t[2] - Exibir Livro"<<endl;
@@ -137,7 +137,7 @@ void menuLivro(){
         cls();
     }
 
-    switch(opcaoMenu){
+    switch(opcaoMenu){ //executa a opcao desejada
         case 1:
             cout << "Digite o nome do livro a ser adicionado: ";
             cin >> titulo;
@@ -203,7 +203,7 @@ void menuRevista(){
     string dataHoje;
     Controlador controlador = Controlador();
 
-    cout << "Digite a opção desejada!\n";
+    cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Revista"<<endl;
     cout << "\t[2] - Exibir Revista"<<endl;
     cout << "\t[3] - Remover Revista"<<endl;
@@ -215,7 +215,7 @@ void menuRevista(){
     cin >> opcaoMenu;
     cls();
 
-    while(opcaoMenu < 1 || opcaoMenu > 8) {
+    while(opcaoMenu < 1 || opcaoMenu > 8) { //verifica se o valor inserido e valido
         cout << "Digito invalido, insira novamente!\n";
         cout << "\t[1] - Adicionar Revista"<<endl;
         cout << "\t[2] - Exibir Revista"<<endl;
@@ -229,7 +229,7 @@ void menuRevista(){
         cls();
     }
 
-    switch(opcaoMenu){
+    switch(opcaoMenu){ //executa a opcao desejada
         case 1:
             cout << "Digite o nome da revista a ser adicionado: ";
             cin >> titulo;
@@ -254,8 +254,8 @@ void menuRevista(){
         case 5:
             cout << "Digite o genero de uma revista para exibir as revistas deste genero: ";
             cin >> genero;
-            revista.genero = genero;
-            controlador.mostrarRevistasGenero(revista.genero);
+            revista1.genero = genero;
+            controlador.mostrarRevistasGenero(revista1.genero);
             break;
         case 6:
             cout << "Digite a matricula do usuario que esta alugando a revista: ";
@@ -292,7 +292,7 @@ void menuUsuario(){
     string nome;
     Controlador controlador = Controlador();
 
-    cout << "Digite a opção desejada!\n";
+    cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Usuario"<<endl;
     cout << "\t[2] - Exibir Usuario"<<endl;
     cout << "\t[3] - Remover Usuario"<<endl;
@@ -301,7 +301,7 @@ void menuUsuario(){
     cin >> opcaoMenu;
     cls();
 
-    while(opcaoMenu < 1 || opcaoMenu > 5) {
+    while(opcaoMenu < 1 || opcaoMenu > 5) { //verifica se o valor inserido e valido
         cout << "Digito invalido, insira novamente!\n";
         cout << "\t[1] - Adicionar Usuario"<<endl;
         cout << "\t[2] - Exibir Usuario"<<endl;
@@ -312,7 +312,7 @@ void menuUsuario(){
         cls();
     }
 
-    switch(opcaoMenu){
+    switch(opcaoMenu){ //executa a opcao desejada
         case 1:
             cout << "Digite o nome do usuario a ser adicionado: ";
             cin >> nome;

@@ -11,6 +11,6 @@
 
 int main() {
     Menu menu;
-    menu.run();
+    menu.rodar();
     return 0;
 }
