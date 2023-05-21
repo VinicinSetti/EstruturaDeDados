@@ -22,7 +22,7 @@ struct Autor{ //struct Autor, onde foram declarados os atributos necessarios e a
 
 int Autor::proxMat = 0; //inicializacao da variavel, a fim de nao pegar lixo de memoria
 
-Autor::Autor() { //metodo contrutor caso basico do meu autor
+Autor::Autor() { //metodo contrutor basico do meu autor
     this->mat = Autor::proxMat++;
     this->nome = "";
     this->livros = new Lista<int>();
