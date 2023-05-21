@@ -7,7 +7,7 @@
 
 using namespace std;
 
-struct Autor{
+struct Autor{ //struct Autor, onde foram declarados os atributos necessarios e algumas funcoes
     static int proxMat;
     int mat;
     string nome;
@@ -20,25 +20,25 @@ struct Autor{
     void removerLivro(int mat);
 };
 
-int Autor::proxMat = 0;
+int Autor::proxMat = 0; //inicializacao da variavel, a fim de nao pegar lixo de memoria
 
-Autor::Autor() {
+Autor::Autor() { //metodo contrutor caso basico do meu autor
     this->mat = Autor::proxMat++;
     this->nome = "";
     this->livros = new Lista<int>();
 }
 
-Autor::Autor(std::string nome) {
+Autor::Autor(std::string nome) { //Sobrecarga no metodo contrutor, com a informacao do nome
     this->mat = Autor::proxMat++;
     this->nome = nome;
     this->livros = new Lista<int>();
 }
 
-void Autor::adicionarLivro(int mat) {
+void Autor::adicionarLivro(int mat) { //Adicionar os livros de dominio deste autor
     livros->inserir(mat);
 }
 
-void Autor::removerLivro(int mat) {
+void Autor::removerLivro(int mat) { //Remover os livros de dominio deste autor
     livros->remover(mat);
 }
 

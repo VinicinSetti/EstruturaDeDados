@@ -53,8 +53,8 @@ struct Controlador{
     void mostrarHistoricoRevista(int mat);
     void mostrarLivrosGenero(string genero);
     void mostrarRevistasGenero(string genero);
-    void mostrarLivrosAtrasados();
-    void mostrarRevistasAtrasadas();
+    void mostrarLivrosAtrasados(int matUsuario, string data);
+    void mostrarRevistasAtrasadas(int matUsuario, string data);
     void mostrarLivroAutor(string autor);
     void mostrarLivroEditora(string editora);
     void mostrarRevistaEditora(string editora);
@@ -425,17 +425,17 @@ void Controlador::mostrarRevistaEditora(std::string editora) {
 void Controlador::mostrarLivrosAtrasados(int matUsuario, string data) {
     Lista<int> livros = usuarios->get(matUsuario)->LivrosAlugados;
     for (int i = 0; i < livros.tamLista; ++i) {
-        if(this->livros.get(livros.get(i))->alugado == true && ValidaData(this->livros->get(livros.get(i))->dataDoAluguel) <
+        if(this->livros->get(livros.get(i))->alugado == true && ValidaData(this->livros->get(livros.get(i))->dataDoAluguel) <
                                                                            ValidaData(data)){
-            cout << this->livros->get(livros.get(i))->mat << " - " << this->livros->get(livros.get(i))->titulo << " - " << this->livros->get(revistas.get(i))->dataDoAluguel << endl;
+            cout << this->livros->get(livros.get(i))->mat << " - " << this->livros->get(livros.get(i))->titulo << " - " << this->livros->get(livros.get(i))->dataDoAluguel << endl;
         }
     }
 }
 
-void Controlador::mostrarRevistasAtrasadas() {
+void Controlador::mostrarRevistasAtrasadas(int matUsuario, string data) {
     Lista<int> revistas = usuarios->get(matUsuario)->RevistasAlugadas;
     for (int i = 0; i < revistas.tamLista; ++i) {
-        if(this->revistas.get(revistas.get(i))->alugado == true && ValidaData(this->revistas->get(revistas.get(i))->dataDoAluguel) <
+        if(this->revistas->get(revistas.get(i))->alugado == true && ValidaData(this->revistas->get(revistas.get(i))->dataDoAluguel) <
                                                                    ValidaData(data)){
             cout << this->revistas->get(revistas.get(i))->mat << " - " << this->revistas->get(revistas.get(i))->titulo << " - " << this->revistas->get(revistas.get(i))->dataDoAluguel << endl;
         }
