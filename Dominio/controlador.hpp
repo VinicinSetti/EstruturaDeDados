@@ -379,4 +379,44 @@ void Controlador::mostrarRevistasAtrasadas(int matUsuario, string data) { // peg
     }
 }
 
+void Controlador::mostrarLivrosAlugados(int matUsuario) {
+    Lista<int> livrosAlugados = usuarios->get(matUsuario)->LivrosAlugados;
+    cout << "Quantidade de livros alugados: " << livrosAlugados.tamLista << endl;
+
+    if (livrosAlugados.tamLista == 0) {
+        cout << "Nenhum livro esta alugado" << endl;
+        return;
+    }
+
+    for (int i = 0; i < livrosAlugados.tamLista; i++) {
+        int matLivro = livrosAlugados.get(i);
+        if (livros->get(i)->mat==matLivro) {
+            Livro* livro = livros->get(matLivro);
+            cout << livro->mat << " - " << livro->titulo << " - " << livro->dataDoAluguel << endl;
+        } else {
+            cout << "Livro nao encontrado" << matLivro << endl;
+        }
+    }
+}
+
+void Controlador::mostrarRevistasAlugadas(int matUsuario) {
+    Lista<int> revistasAlugadas = usuarios->get(matUsuario)->RevistasAlugadas;
+    cout << "Quantidade de revistas alugadas: " << revistasAlugadas.tamLista << endl;
+
+    if (revistasAlugadas.tamLista == 0) {
+        cout << "Nenhuma revista esta alugada" << endl;
+        return;
+    }
+
+    for (int i = 0; i < revistasAlugadas.tamLista; i++) {
+        int matRevista = revistasAlugadas.get(i);
+        if (revistas->get(i)->mat==matRevista) {
+            Revista* revista = revistas->get(matRevista);
+            cout << revista->mat << " - " << revista->titulo << " - " << revista->dataDoAluguel << endl;
+        } else {
+            cout << "Revista nao encontrada" << matRevista << endl;
+        }
+    }
+}
+
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
