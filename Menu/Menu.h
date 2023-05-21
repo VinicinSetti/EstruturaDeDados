@@ -12,27 +12,13 @@ void cls(){
 }
 
 //Funcoes para menu de Autor
-void adicionarAutor(){
-    string nome;
-    Autor *autor = new Autor[10];
-    Controlador controlador = Controlador();
-
-    cout << "Diga o Nome do autor: "<< endl;
-    cin >> nome;
-    autor[0].nome = nome;
-    controlador.adicionarAutor(autor[0]);
-}
-void exibirAutor(){
-    Controlador controlador = Controlador();
-
-    controlador.mostrarAutor(autor[0].mat);
-    controlador.mostrarAutor(autor[1].mat);
-}
-void removerAutor(){
-
-}
 void menuAutor(){
     int opcaoMenu;
+    int matricula;
+    Autor autor;
+    string nome;
+    Controlador controlador = Controlador();
+
     cout << "Digite a opção desejada!\n";
     cout << "\t[1] - Adicionar Autor"<<endl;
     cout << "\t[2] - Exibir Autor"<<endl;
@@ -51,11 +37,18 @@ void menuAutor(){
 
     switch(opcaoMenu){
         case 1:
-            adicionarAutor();
+            cout << "Digite o nome do autor a ser adicionado: "
+            cin >> nome;
+            autor.nome = nome;
+            controlador.adicionarAutor(autor);
         case 2:
-            exibirAutor();
+            cout << "Digite a matricula do autor a ser exibido: "
+            cin >> matricula;
+            controlador.mostrarAutor(matricula);
         case 3:
-            removerAutor();
+            cout << "Digite a matricula do autor a ser removido: "
+            cin >> matricula;
+            controlador.removerAutor(matricula);
     }
 }
 
