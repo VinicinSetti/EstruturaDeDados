@@ -41,7 +41,7 @@ struct Controlador{ //Declaracoes das tabelas Hash que serao usadas, alem da fun
 
     void adicionarUsuario(Usuario usuario);
     void removerUsuario(int mat);
-    void mostarUsuario(int mat);
+    void mostrarUsuario(int mat);
     void alugarLivro(int matUsuario, int matLivro, string data);
     void devolverLivro(int matUsuario, int matLivro);
     void mostrarLivrosAlugados(int matUsuario);
@@ -151,14 +151,14 @@ void Controlador::adicionarUsuario(Usuario usuario) { // adiciona as informacoes
     usuarios->inserir(usuario.mat, usuario);
 }
 
-void Controlador::removerUsuario(int mat) { // remove da possicao informada o usuario da hash
+void Controlador::removerUsuario(int mat) { // remove da posicao informada o usuario da hash
     if(!usuarios->get(mat)){
         cout << "Usuario não encontrado" << endl;
     }
     usuarios->remover(mat);
 }
 
-void Controlador::mostarUsuario(int mat) { // pega a posicao informada e entra na hash para mostar as informacoes do usuario
+void Controlador::mostrarUsuario(int mat) { // pega a posicao informada e entra na hash para mostrar as informacoes do usuario
     cout<<"Matricula do Usuario: "<<usuarios->get(mat)->mat<<endl;
     cout<<"Nome do Usuario: "<<usuarios->get(mat)->nome<<endl;
     cout<<"Livros do Usuario:"<<endl;
