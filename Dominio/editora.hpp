@@ -11,10 +11,13 @@ struct Editora{
     static int proxMat;
     int mat;
     string nome;
-    Lista<int> *livro;
+    Lista<int> *livros;
 
     Editora();
     Editora(string nome);
+
+    void adicionarLivro(int mat);
+    void removerLivro(int mat);
 };
 
 int Editora::proxMat = 0;
@@ -29,6 +32,12 @@ Editora::Editora(string nome) {
     this->nome = nome;
 }
 
+void Editora::adicionarLivro(int mat) {
+    livros->inserir(mat);
+}
 
+void Editora::removerLivro(int mat) {
+    livros->remover(mat);
+}
 
 #endif //TRABESTRUTURAM2_EDITORA_H

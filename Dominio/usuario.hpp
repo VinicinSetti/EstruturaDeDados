@@ -11,12 +11,17 @@ struct Usuario{
     static int proxMat;
     int mat;
     string nome;
-    Lista<int> LivrosAlugados;
-
     Usuario();
     Usuario(string nome);
+    Lista<int> LivrosAlugados;
+    Lista<int> RevistasAlugadas;
+    Lista<int> hitoricoLivrosAlugados;
+    Lista<int> historicoRevistasAlugadas;
+
     void alugarLivro(int matLivro);
     void devolverLivro(int matLivro);
+    void alugarRevista(int matRevista);
+    void devolverRevista(int matRevista);
 };
 
 int Usuario::proxMat = 0;
@@ -35,10 +40,20 @@ Usuario::Usuario(string nome) {
 
 void Usuario::alugarLivro(int matLivro) {
     LivrosAlugados.inserir(matLivro);
+    hitoricoLivrosAlugados.inserir(matLivro);
 }
 
 void Usuario::devolverLivro(int matLivro) {
     LivrosAlugados.remover(matLivro);
+}
+
+void Usuario::alugarRevista(int matRevista) {
+    RevistasAlugadas.inserir(matRevista);
+    historicoRevistasAlugadas.inserir(matRevista);
+}
+
+void Usuario::devolverRevista(int matRevista) {
+    RevistasAlugadas.remover(matRevista);
 }
 
 #endif //TRABESTRUTURAM2_USUARIO_H

@@ -7,7 +7,6 @@
 using namespace std;
 
 struct Livro{
-    Livro(string titulo, int autor, int editora, string genero, bool esprestado, string dataDoEmprestimo);
 
     static int proxMat;
     int mat;
@@ -17,12 +16,16 @@ struct Livro{
     string genero;
     bool alugado;
     string dataDoAluguel;
+    int numEmprestado;
 
     Livro();
-    Livro(string titulo, int autor, int editora, string genero);
+    Livro(string titulo, int autor, int editora, string genero, bool alugado, string dataDoAluguel);
 
     void definirEmprestimo(bool esmprestar);
     void dataRealizadaDoEmprestimo(string dataDoEmprestimo);
+    void definirAutor(int autor);
+    void definirEditora(int editora);
+    void definirGenero(string genero);
 
 };
 
@@ -35,6 +38,7 @@ Livro::Livro() {
     this->editora = 0;
     this->genero = "";
     this->alugado = false;
+    this->numEmprestado = 0;
     this->dataDoAluguel = "";
 }
 
@@ -45,6 +49,7 @@ Livro::Livro(string titulo, int autor, int editora, string genero, bool alugado,
     this->editora = editora;
     this->genero = genero;
     this->alugado = alugado;
+    this->numEmprestado = 0;
     this->dataDoAluguel = dataDoAluguel;
 }
 
@@ -56,4 +61,15 @@ void Livro::dataRealizadaDoEmprestimo(string dataDoAluguel) {
     this->dataDoAluguel = dataDoAluguel;
 }
 
+void Livro::definirAutor(int autor) {
+    this->autor = autor;
+}
+
+void Livro::definirEditora(int editora) {
+    this->editora = editora;
+}
+
+void Livro::definirGenero(std::string genero) {
+    this->genero = genero;
+}
 #endif //TRABESTRUTURAM2_LIVRO_H
