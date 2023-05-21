@@ -422,4 +422,24 @@ void Controlador::mostrarRevistaEditora(std::string editora) {
     }
 }
 
+void Controlador::mostrarLivrosAtrasados(int matUsuario, string data) {
+    Lista<int> livros = usuarios->get(matUsuario)->LivrosAlugados;
+    for (int i = 0; i < livros.tamLista; ++i) {
+        if(this->livros.get(livros.get(i))->alugado == true && ValidaData(this->livros->get(livros.get(i))->dataDoAluguel) <
+                                                                           ValidaData(data)){
+            cout << this->livros->get(livros.get(i))->mat << " - " << this->livros->get(livros.get(i))->titulo << " - " << this->livros->get(revistas.get(i))->dataDoAluguel << endl;
+        }
+    }
+}
+
+void Controlador::mostrarRevistasAtrasadas() {
+    Lista<int> revistas = usuarios->get(matUsuario)->RevistasAlugadas;
+    for (int i = 0; i < revistas.tamLista; ++i) {
+        if(this->revistas.get(revistas.get(i))->alugado == true && ValidaData(this->revistas->get(revistas.get(i))->dataDoAluguel) <
+                                                                   ValidaData(data)){
+            cout << this->revistas->get(revistas.get(i))->mat << " - " << this->revistas->get(revistas.get(i))->titulo << " - " << this->revistas->get(revistas.get(i))->dataDoAluguel << endl;
+        }
+    }
+}
+
 #endif //TRABESTRUTURAM2_CONTROLADOR_H
