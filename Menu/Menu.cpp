@@ -8,6 +8,9 @@ struct Menu{ //struct para rodar o menu
 void Menu::rodar() { //funcao para inicializacao do menu
     bool menu = true;
     int opcao;
+    int contAutor = 0;
+    Controlador controlador = Controlador();
+    Autor *autor = new Autor[10];
 
     while(menu) {
         cout << "Digite a opção desejada!\n";
@@ -34,7 +37,7 @@ void Menu::rodar() { //funcao para inicializacao do menu
 
         switch(opcao){ //roda a funcao de menu da opcao selecionada
             case 1:
-                menuAutor();
+                menuAutor(autor[contAutor], controlador, contAutor);
                 break;
             case 2:
                 menuEditora();

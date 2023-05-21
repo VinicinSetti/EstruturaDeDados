@@ -12,12 +12,12 @@ void cls(){ //funcao para limpar a tela
 }
 
 //Funcao para menu de Autor
-void menuAutor(){
+void menuAutor(Autor autor1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
-    Autor autor;
+
     string nome;
-    Controlador controlador = Controlador();
+
 
     cout << "Digite a opção desejada!\n"; //pede a acao da opcao desejada
     cout << "\t[1] - Adicionar Autor"<<endl;
@@ -39,8 +39,9 @@ void menuAutor(){
         case 1:
             cout << "Digite o nome do autor a ser adicionado: ";
             cin >> nome;
-            autor.nome = nome;
-            controlador.adicionarAutor(autor);
+            autor1.nome = nome;
+            controlador.adicionarAutor(autor1);
+            cont++;
             break;
         case 2:
             cout << "Digite a matricula do autor a ser exibido: ";
