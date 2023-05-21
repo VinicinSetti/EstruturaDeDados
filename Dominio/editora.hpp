@@ -25,11 +25,13 @@ int Editora::proxMat = 0; //inicializacao da variavel, a fim de nao pegar lixo d
 Editora::Editora() { //metodo contrutor basico do meu autor
     this->mat = proxMat++;
     this->nome = "";
+    this->livros = new Lista<int>();
 }
 
 Editora::Editora(string nome) { //Sobrecarga no metodo contrutor, com a informacao do nome
     this->mat = proxMat++;
     this->nome = nome;
+    this->livros = new Lista<int>();
 }
 
 void Editora::adicionarLivro(int mat) { //Adicionar os livros de dominio desta editora

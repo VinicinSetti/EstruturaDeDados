@@ -196,6 +196,8 @@ void menuLivro(Livro livro1, Controlador &controlador, int &cont){
 void menuRevista(Revista revista1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
+    int matriculaAutor;
+    int matriculaEditora;
     int matriculaUsuario;
     string titulo;
     string genero;
@@ -233,6 +235,15 @@ void menuRevista(Revista revista1, Controlador &controlador, int &cont){
             cout << "Digite o nome da revista a ser adicionado: ";
             cin >> titulo;
             revista1.titulo = titulo;
+            cout << "Digite a matricula do autor da revista a ser adicionada: ";
+            cin >> matriculaAutor;
+            cout << "Digite a matricula da editora da revista a ser adicionada: ";
+            cin >> matriculaEditora;
+            cout << "Digite o genero da revista a ser adicionado: ";
+            cin >> genero;
+            revista1.autor = controlador.autores->get(matriculaAutor)->mat;
+            revista1.editora = controlador.editoras->get(matriculaEditora)->mat;
+            revista1.genero = genero;
             controlador.adicionarRevista(revista1);
             cont++;
             break;

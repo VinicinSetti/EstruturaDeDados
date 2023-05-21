@@ -19,7 +19,7 @@ struct Livro{ //struct Livro, foram declarados os atributos necessarios e alguma
     int numEmprestado;
 
     Livro();
-    Livro(string titulo, int autor, int editora, string genero, bool alugado, string dataDoAluguel);
+    Livro(string titulo, int autor, int editora, string genero);
 
     void definirEmprestimo(bool esmprestar);
     void dataRealizadaDoEmprestimo(string dataDoEmprestimo);
@@ -42,15 +42,15 @@ Livro::Livro() { //metodo contrutor basico de livro
     this->dataDoAluguel = "";
 }
 
-Livro::Livro(string titulo, int autor, int editora, string genero, bool alugado, string dataDoAluguel) { //Sobrecarga no meu metodo construtor de Livro, para salvamento das informacoes de seu cadastro
+Livro::Livro(string titulo, int autor, int editora, string genero) { //Sobrecarga no meu metodo construtor de Livro, para salvamento das informacoes de seu cadastro
     this->mat = proxMat++;
     this->titulo = titulo;
     this->autor = autor;
     this->editora = editora;
     this->genero = genero;
-    this->alugado = alugado;
+    this->alugado = false;
     this->numEmprestado = 0;
-    this->dataDoAluguel = dataDoAluguel;
+    this->dataDoAluguel = "";
 }
 
 void Livro::definirEmprestimo(bool alugado) { //irá definor o atributo verificador se este livro foi pego empresatado ou nao

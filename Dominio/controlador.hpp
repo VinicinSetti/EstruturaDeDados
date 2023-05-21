@@ -106,10 +106,15 @@ void Controlador::removerEditora(int mat) { //verificar se na possicao informada
 }
 
 void Controlador::mostrarEditora(int mat) { //busca a posicao informada do autor para mostrar o numeroda matricula, nome e os livros cadastrados desta editora
+    if(!editoras->get(mat)) {
+        cout << "Nenhuma editora foi encontrada neste numero de matricula" << endl;
+        return;
+    }
+
     cout<<"Nº da Matricula da Editora: "<<editoras->get(mat)->mat<<endl;
     cout<<"Nome da Editora: "<<editoras->get(mat)->nome<<endl;
     cout<<"Livros desta editora:"<< endl;
-    Lista<int> *livros = editoras->get(mat)->livros;
+   Lista<int> *livros = editoras->get(mat)->livros;
     for (int i = 0; i < livros->tamLista; ++i) {
         cout<<this->livros->get(livros->get(i))->titulo<<endl;
     }
