@@ -105,6 +105,8 @@ void menuLivro(Livro livro1, Controlador &controlador, int &cont){
     int opcaoMenu;
     int matricula;
     int matriculaUsuario;
+    int matriculaAutor;
+    int matriculaEditora;
     string titulo;
     string genero;
     string dataAluguel;
@@ -141,6 +143,15 @@ void menuLivro(Livro livro1, Controlador &controlador, int &cont){
             cout << "Digite o nome do livro a ser adicionado: ";
             cin >> titulo;
             livro1.titulo = titulo;
+            cout << "Digite a matricula do autor do livro a ser adicionada: ";
+            cin >> matriculaAutor;
+            cout << "Digite a matricula da editora do livro a ser adicionada: ";
+            cin >> matriculaEditora;
+            cout << "Digite o genero do livro a ser adicionado: ";
+            cin >> genero;
+            livro1.autor = controlador.autores->get(matriculaAutor)->mat;
+            livro1.editora = controlador.editoras->get(matriculaEditora)->mat;
+            livro1.genero = genero;
             controlador.adicionarLivro(livro1);
             cont++;
             break;
