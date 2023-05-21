@@ -194,8 +194,8 @@ void Controlador::mostrarRevista(int mat) { // pega a posicao informada e entra 
     cout<<"Matricula da Revista: "<<revistas->get(mat)->mat<<endl;
     cout<<"Titulo da Revista: "<<revistas->get(mat)->titulo<<endl;
     cout<<"Genero da Revista: "<<revistas->get(mat)->genero<<endl;
-    cout<<"Editora da Revista: "<<revistas->get(mat)->editora<<endl;
-    cout<<"Autor da Revista: "<<revistas->get(mat)->autor<<endl;
+    cout<<"Editora do Livro: "<<editoras->get(revistas->get(mat)->editora)->nome<<endl;
+    cout<<"Autor do livro: "<<autores->get(revistas->get(mat)->autor)->nome<<endl;
     if(revistas->get(mat)->alugado){
         cout << "Revista foi alugado | Data de aluguel: "<< revistas->get(mat)->dataDoAluguel << endl;
     } else {
